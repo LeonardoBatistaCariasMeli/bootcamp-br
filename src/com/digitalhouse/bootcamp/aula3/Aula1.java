@@ -11,6 +11,34 @@ public class Aula1 {
         this.scanner = scanner;
     }
 
+    public void runAllExercises() {
+        // Exercicio 1
+       System.out.println("Exercício 1");
+       exercicio1();
+       System.out.println("\n");
+
+       // Exercicio 2
+       System.out.println("Exercício 2");
+       multipleNumbers();
+       System.out.println("\n");
+
+       // Exercicio 3
+       System.out.println("Exercício 3");
+       System.out.print("Insira um número: ");
+       int numero = scanner.nextInt();
+       System.out.println(isPrimo(numero) + "\n");
+
+       // Exercicio 4
+       System.out.println("Exercício 4");
+       primeNumbers();
+       System.out.println("\n");
+
+       // Exercicio 5
+       System.out.println("Exercício 5");
+       firstPrimeNumberValuesWithConditions();
+       System.out.println("");
+    }
+
     public void multipleNumbers() {
 
         // Exercicio 2
