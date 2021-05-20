@@ -1,5 +1,6 @@
 package com.digitalhouse.bootcamp.aula3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Aula3 {
@@ -8,6 +9,60 @@ public class Aula3 {
 
     public Aula3(Scanner scanner) {
         this.scanner = scanner;
+    }
+
+    public void printArray() {
+        Integer[] array = {52, 10, 85, 1324, 01, 13, 62, 30, 12, 127};
+
+        array = orderBy(array);
+
+        for (int a : array) {
+            System.out.print(a);
+            System.out.print("\t");
+        }
+
+        System.out.println();
+
+        array = orderByDesc(array);
+
+        for (int a : array) {
+            System.out.print(a);
+            System.out.print("\t");
+        }
+    }
+
+    private Integer[] orderBy(Integer[] array) {
+        for (int i = 0; i < array.length; i++) {
+
+            for (int j = i+1; j < array.length; j++) {
+
+                if (array[i] > array[j]) {
+
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+
+        return array;
+    }
+
+    private Integer[] orderByDesc(Integer[] array) {
+        for (int i = 0; i < array.length; i++) {
+
+            for (int j = i+1; j < array.length; j++) {
+
+                if (array[i] < array[j]) {
+
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+
+        return array;
     }
 
     public void multipleNumbers() {
