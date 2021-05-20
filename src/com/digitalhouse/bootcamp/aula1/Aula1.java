@@ -1,6 +1,9 @@
-package com.digitalhouse.bootcamp.aula3;
+package com.digitalhouse.bootcamp.aula1;
 
-import java.util.Arrays;
+import com.digitalhouse.bootcamp.aula1.domain.Product;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Aula1 {
@@ -37,6 +40,9 @@ public class Aula1 {
        System.out.println("Exercício 5");
        firstPrimeNumberValuesWithConditions();
        System.out.println("");
+
+       // Exercicio
+        orderByAscAndDesc();
     }
 
     public void multipleNumbers() {
@@ -212,6 +218,61 @@ public class Aula1 {
             System.out.print("\t");
         }
         System.out.println();
+    }
+
+
+    public void anualEvolutionEnterpriseXThanY() {
+        float evaluatedX = 1.13f, evaluatedY = 18.4f;
+        float percentX = 1.48f, percentY = 0.32f;
+        int year = 2021;
+
+        for(int i = 0; evaluatedX < evaluatedY; i++) {
+            evaluatedX += evaluatedX * percentX;
+            evaluatedY += evaluatedY * percentY;
+            year++;
+            System.out.println("Empresa X - 01/01/"+year+ " - Valor da empresa: " + evaluatedX);
+            System.out.println("Empresa Y - 01/01/"+year+ " - Valor da empresa: " + evaluatedY);
+        }
+    }
+
+    public void readProductsAndPrint() {
+        List<Product> products = requestProducts();
+
+        printProducts(products);
+    }
+
+    private List<Product> requestProducts() {
+        int quantityProduct = 1;
+        List<Product> products = new ArrayList<>();
+        while(quantityProduct < 4) {
+            System.out.println("Digite o nome do produto");
+            String nomeProduto = scanner.next();
+
+            System.out.println("Digite o preço do produto");
+            float precoProduto = scanner.nextFloat();
+
+            System.out.println("Digite a quantidade do produto");
+            int quantidade = scanner.nextInt();
+
+            products.add(new Product(quantityProduct, nomeProduto, precoProduto, quantidade));
+            quantityProduct++;
+        }
+        return products;
+    }
+
+    private void printProducts(List<Product> products) {
+        float totalValue = 0.0f;
+        for(Product product : products) {
+            System.out.println("Product " + product.getId());
+            System.out.println(product.getName());
+            System.out.println("R$" + product.getPrice());
+            System.out.println("Quantity: " + product.getQuantity());
+            System.out.println();
+
+            totalValue += product.getPrice() * product.getQuantity();
+        }
+
+        System.out.println("Valor Total: R$" + totalValue);
     }
 
 }
