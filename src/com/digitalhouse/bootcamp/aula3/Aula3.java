@@ -42,7 +42,6 @@ public class Aula3 {
         // Desenvolva um programa para informar se um um número n é primo ou não, sendo n um valor que o
         // usuário irá inserir pelo console. Lembre-se que um número é primo quando só é divisível por 1 e por si mesmo.
 
-
         boolean isPrimo = false;
         int resultado = 0;
 
@@ -60,10 +59,11 @@ public class Aula3 {
         return isPrimo;
     }
 
-    public static int exercicio1(){
+    public static void exercicio1(){
         Scanner scanner = new Scanner(System.in);
 
-        int size =  scanner.nextInt();
+        System.out.print("Insira um número: ");
+        int size = scanner.nextInt();
 
         if(size == 0){
             System.out.println("nenhum numero par");
@@ -79,8 +79,6 @@ public class Aula3 {
             }            
             System.out.println("Finalizado");
         }
-        return 0;
-        
     }
     public void primeNumbers() {
 
