@@ -60,4 +60,26 @@ public class Aula3 {
         System.out.println("É primo? " + (isPrimo ? "Sim" : "Não"));
     }
 
+    public void primeNumbers() {
+
+        // Exercicio 4
+        // Desenvolva um programa para mostrar por console os primeiros n números primos,
+        // sendo n um valor que o usuário irá inserir pelo console.
+
+        System.out.print("Insira um número: ");
+        int n = scanner.nextInt();
+
+        int i = 0,
+            j = 1;
+
+        while( i < n ) {
+            if(isPrimo(j)){
+                System.out.println(j);
+                i++;
+            }
+            j++;
+        }
+    }
+
+
 }
