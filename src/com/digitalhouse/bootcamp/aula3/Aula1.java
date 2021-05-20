@@ -3,11 +3,11 @@ package com.digitalhouse.bootcamp.aula3;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Aula3 {
+public class Aula1 {
 
     private Scanner scanner;
 
-    public Aula3(Scanner scanner) {
+    public Aula1(Scanner scanner) {
         this.scanner = scanner;
     }
 
