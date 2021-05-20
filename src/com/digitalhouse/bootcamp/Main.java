@@ -9,6 +9,9 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         Aula3 aula3 = new Aula3(scanner);
+        
+        // Exercicio 1
+        Aula3.exercicio1();
 
         // Exercicio 2
         aula3.multipleNumbers();

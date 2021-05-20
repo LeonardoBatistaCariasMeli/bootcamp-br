@@ -60,4 +60,26 @@ public class Aula3 {
         return isPrimo;
     }
 
+    public static int exercicio1(){
+        Scanner scanner = new Scanner(System.in);
+
+        int size =  scanner.nextInt();
+
+        if(size == 0){
+            System.out.println("nenhum numero par");
+        }else if(size < 0){
+            System.out.println("numero ínvalido");
+        }else{
+            int count  = 0;
+            for(int i = 0; count < size; i++){
+                if( ( i & 1 ) == 0){
+                    System.out.println("" + i);
+                    count++;
+                }
+            }            
+            System.out.println("Finalizado");
+        }
+        return 0;
+        
+    }
 }
