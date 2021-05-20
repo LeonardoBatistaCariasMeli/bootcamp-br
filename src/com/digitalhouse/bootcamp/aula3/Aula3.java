@@ -2,7 +2,8 @@ package com.digitalhouse.bootcamp.aula3;
 
 import java.util.Scanner;
 
-public Class Aula3 
+public class Aula3 {
+
     private Scanner scanner;
 
     public Aula3(Scanner scanner) {
@@ -80,5 +81,44 @@ public Class Aula3
         }
     }
 
+    public void exercicio5() {
+        System.out.println("Digite a quantidade de vezes que os números naturais devem aparecer");
+        int n = scanner.nextInt();
+        System.out.println("Digite qual o número que deve aparecer");
+        int d = scanner.nextInt();
+        System.out.println("Digite a quantidade minima de digitos que os numeros devem ter");
+        int m = scanner.nextInt();
 
+        buscaOcorrenciaDosValores(n, m, d);
+    }
+
+    private void buscaOcorrenciaDosValores(int n, int m, int d) {
+        int ocorrencias = 0;
+        for(int numeroAtual = 0; ocorrencias < n; numeroAtual++) {
+            if(validaNumeroAtual(numeroAtual, m, d)) {
+                System.out.println(numeroAtual);
+                ocorrencias++;
+            }
+        }
+    }
+
+    private boolean validaNumeroAtual(int numeroAtual, int m, int d) {
+        int ocorrenciaDoNumero = 0;
+        String valorAtual = String.valueOf(numeroAtual);
+        String[] valorAtualDivido = valorAtual.split("");
+
+        if(!validaSeNumeroTemTamanhoValido(valorAtualDivido, m))
+            return false;
+
+        for(String valor : valorAtualDivido) {
+            if(valor.equals(String.valueOf(d))) {
+            ocorrenciaDoNumero++;
+            }
+        }
+        return ocorrenciaDoNumero >= m;
+    }
+
+    private boolean validaSeNumeroTemTamanhoValido(String[] numeroAtualDivido, int m) {
+        return numeroAtualDivido.length > m-1;
+    }
 }
