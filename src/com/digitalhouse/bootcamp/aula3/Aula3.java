@@ -23,25 +23,25 @@ public class Aula3 {
 
         System.out.println("");
 
-        int i = 1;
-        do
-        {
+        int ocorrencias = 0;
+        for (int i = 1; ocorrencias < n; i++) {
+
             if (i % m == 0) {
                 System.out.print(i);
                 System.out.print("\t");
-                n--;
+                ocorrencias++;
             }
-
-            i++;
-        } while (n > 0);
+        }
     }
 
-    public static Boolean isPrimo(int numero){
+    public void isPrimo(){
 
         // Exercicio 3
         // Desenvolva um programa para informar se um um número n é primo ou não, sendo n um valor que o
         // usuário irá inserir pelo console. Lembre-se que um número é primo quando só é divisível por 1 e por si mesmo.
 
+        System.out.print("Insira um número: ");
+        int numero = scanner.nextInt();
 
         boolean isPrimo = false;
         int resultado = 0;
@@ -57,7 +57,7 @@ public class Aula3 {
             isPrimo = true;
         }
 
-        return isPrimo;
+        System.out.println("É primo? " + (isPrimo ? "Sim" : "Não"));
     }
 
     public static int exercicio1(){
@@ -82,4 +82,26 @@ public class Aula3 {
         return 0;
         
     }
+    public void primeNumbers() {
+
+        // Exercicio 4
+        // Desenvolva um programa para mostrar por console os primeiros n números primos,
+        // sendo n um valor que o usuário irá inserir pelo console.
+
+        System.out.print("Insira um número: ");
+        int n = scanner.nextInt();
+
+        int i = 0,
+            j = 1;
+
+        while( i < n ) {
+            if(isPrimo(j)){
+                System.out.println(j);
+                i++;
+            }
+            j++;
+        }
+    }
+
+
 }
