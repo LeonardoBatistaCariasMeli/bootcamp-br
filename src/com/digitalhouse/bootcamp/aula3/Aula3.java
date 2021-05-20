@@ -11,60 +11,6 @@ public class Aula3 {
         this.scanner = scanner;
     }
 
-    public void printArray() {
-        Integer[] array = {52, 10, 85, 1324, 01, 13, 62, 30, 12, 127};
-
-        array = orderBy(array);
-
-        for (int a : array) {
-            System.out.print(a);
-            System.out.print("\t");
-        }
-
-        System.out.println();
-
-        array = orderByDesc(array);
-
-        for (int a : array) {
-            System.out.print(a);
-            System.out.print("\t");
-        }
-    }
-
-    private Integer[] orderBy(Integer[] array) {
-        for (int i = 0; i < array.length; i++) {
-
-            for (int j = i+1; j < array.length; j++) {
-
-                if (array[i] > array[j]) {
-
-                    int temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                }
-            }
-        }
-
-        return array;
-    }
-
-    private Integer[] orderByDesc(Integer[] array) {
-        for (int i = 0; i < array.length; i++) {
-
-            for (int j = i+1; j < array.length; j++) {
-
-                if (array[i] < array[j]) {
-
-                    int temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                }
-            }
-        }
-
-        return array;
-    }
-
     public void multipleNumbers() {
 
         // Exercicio 2
@@ -196,4 +142,48 @@ public class Aula3 {
     private boolean isCurrentNumberLengthValid(String[] numeroAtualDivido, int m) {
         return numeroAtualDivido.length > m-1;
     }
+
+    public void orderByAscAndDesc() {
+        Integer[] array = {52, 10, 85, 1324, 01, 13, 62, 30, 12, 127};
+        orderByAsc(array);
+        orderByDesc(array);
+    }
+
+    private void orderByAsc(Integer[] array) {
+        for (int i = 0; i < array.length; i++) {
+
+            for (int j = i+1; j < array.length; j++) {
+
+                if (array[i] > array[j]) {
+
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+        printArray(array);
+    }
+
+    private void orderByDesc(Integer[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i+1; j < array.length; j++) {
+                if (array[i] < array[j]) {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+        printArray(array);
+    }
+
+    public void printArray(Integer[] array) {
+        for (int a : array) {
+            System.out.print(a);
+            System.out.print("\t");
+        }
+        System.out.println();
+    }
+
 }

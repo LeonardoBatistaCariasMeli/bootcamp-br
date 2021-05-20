@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Aula3 aula3 = new Aula3(scanner);
 
-        aula3.printArray();
+        aula3.orderByAscAndDesc();
 
 //        // Exercicio 1
 //        System.out.println("Exercício 1");
