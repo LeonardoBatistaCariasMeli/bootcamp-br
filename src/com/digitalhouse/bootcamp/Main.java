@@ -15,5 +15,8 @@ public class Main {
 
         // Exercicio 3
         System.out.println(Aula3.isPrimo(5));
+
+        // Exercicio 4
+        aula3.primeNumbers();
     }
 }
