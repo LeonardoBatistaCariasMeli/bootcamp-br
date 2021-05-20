@@ -27,7 +27,7 @@ public class Main {
         System.out.println("\n");
 
         // Exercicio 5
-        aula3.exercicio5();
+        aula3.firstPrimeNumberValuesWithConditions();
         System.out.println("");
 
     }

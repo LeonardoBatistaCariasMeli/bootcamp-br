@@ -103,7 +103,7 @@ public class Aula3 {
         }
     }
 
-    public void exercicio5() {
+    public void firstPrimeNumberValuesWithConditions() {
         System.out.println("Digite a quantidade de vezes que os números naturais devem aparecer");
         int n = scanner.nextInt();
         System.out.println("Digite qual o número que deve aparecer");
@@ -111,25 +111,25 @@ public class Aula3 {
         System.out.println("Digite a quantidade minima de digitos que os numeros devem ter");
         int m = scanner.nextInt();
 
-        buscaOcorrenciaDosValores(n, m, d);
+        findOccurrenceValues(n, m, d);
     }
 
-    private void buscaOcorrenciaDosValores(int n, int m, int d) {
+    private void findOccurrenceValues(int n, int m, int d) {
         int ocorrencias = 0;
         for(int numeroAtual = 0; ocorrencias < n; numeroAtual++) {
-            if(validaNumeroAtual(numeroAtual, m, d)) {
+            if(isCurrentNumberValid(numeroAtual, m, d)) {
                 System.out.println(numeroAtual);
                 ocorrencias++;
             }
         }
     }
 
-    private boolean validaNumeroAtual(int numeroAtual, int m, int d) {
+    private boolean isCurrentNumberValid(int numeroAtual, int m, int d) {
         int ocorrenciaDoNumero = 0;
         String valorAtual = String.valueOf(numeroAtual);
         String[] valorAtualDivido = valorAtual.split("");
 
-        if(!validaSeNumeroTemTamanhoValido(valorAtualDivido, m))
+        if(!isCurrentNumberLengthValid(valorAtualDivido, m))
             return false;
 
         for(String valor : valorAtualDivido) {
@@ -140,7 +140,7 @@ public class Aula3 {
         return ocorrenciaDoNumero >= m;
     }
 
-    private boolean validaSeNumeroTemTamanhoValido(String[] numeroAtualDivido, int m) {
+    private boolean isCurrentNumberLengthValid(String[] numeroAtualDivido, int m) {
         return numeroAtualDivido.length > m-1;
     }
 }
