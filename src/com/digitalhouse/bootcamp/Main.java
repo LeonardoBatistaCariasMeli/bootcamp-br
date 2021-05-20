@@ -1,6 +1,6 @@
 package com.digitalhouse.bootcamp;
 
-import com.digitalhouse.bootcamp.aula3.Aula3;
+import com.digitalhouse.bootcamp.aula3.Aula1;
 
 import java.util.Scanner;
 
@@ -9,9 +9,10 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Aula3 aula3 = new Aula3(scanner);
+        Aula1 aula1 = new Aula1(scanner);
 
-        aula3.orderByAscAndDesc();
+        //aula1.runAllExercises();
 
+        aula1.orderByAscAndDesc();
     }
 }
