@@ -206,7 +206,7 @@ public class Aula3 {
         printArray(array);
     }
 
-    public void printArray(Integer[] array) {
+    private void printArray(Integer[] array) {
         for (int a : array) {
             System.out.print(a);
             System.out.print("\t");
