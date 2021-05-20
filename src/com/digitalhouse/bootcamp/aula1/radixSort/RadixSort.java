@@ -11,8 +11,9 @@ public class RadixSort {
 
         radix.radixSort();
     }
+
     public void radixSort() {
-        int iArr[] = { 16223, 898, 13, 906, 235, 23, 9, 1532, 6388, 2511, 8 };
+        int iArr[] = {16223, 898, 13, 906, 235, 23, 9, 1532, 6388, 2511, 8};
 
         String str = Arrays.toString(iArr).replaceAll("\\s+", "");
 
@@ -20,63 +21,41 @@ public class RadixSort {
 
         int maxLength = findMaxLength(iArrStr);
 
-        String[] finalArr = sort(iArrStr, maxLength,1);
+        String[] finalArr = sort(iArrStr, maxLength, 1);
 
-        for(String elem : finalArr) {
+        for (String elem : finalArr) {
             System.out.print(elem);
             System.out.print("\t");
         }
-
-
     }
 
     private String[] sort(String[] iArrStr, int maxLength, int actualPosition) {
-        if(actualPosition > maxLength) {
+        if (actualPosition > maxLength) {
             return iArrStr;
         }
 
         HashMap<Integer, Integer> values = getNewHashMap();
-        preencheHashMap(values, iArrStr, actualPosition);
+        fillHashMap(values, iArrStr, actualPosition);
 
-        for(Map.Entry<Integer, Integer> entry : values.entrySet()) {
-            int key = entry.getKey();
-            if(!(key == 0)) {
-                int value = entry.getValue();
-                int auxKey = entry.getKey() - 1;
-                int auxValue = values.get(auxKey);
-                values.put(key, auxValue + value);
-            }
-        }
+        sumHashMapWithNextPosition(values);
 
-        String[] newArrStr = new String[iArrStr.length];
-        for(int i = iArrStr.length - 1; i > -1; i --) {
-            String elem = iArrStr[i];
-            int digit = 0;
-
-            if(!(elem.length() < actualPosition)) {
-                digit = Integer.parseInt(elem.substring(elem.length()-actualPosition, elem.length()-actualPosition +1));
-            }
-            
-            int value = values.get(digit);
-            values.put(digit, --value);
-            newArrStr[value] = iArrStr[i];
-        }
+        String[] newArrStr = createNewPositionArray(values, iArrStr, actualPosition);
 
         return sort(newArrStr, maxLength, ++actualPosition);
     }
 
     public int findMaxLength(String[] iArrStr) {
         int max = 0;
-        for(String elem : iArrStr) {
-           int auxMax = elem.length();
+        for (String elem : iArrStr) {
+            int auxMax = elem.length();
 
-           if(max < auxMax)
-               max = auxMax;
+            if (max < auxMax)
+                max = auxMax;
         }
-       return max;
+        return max;
     }
 
-    private HashMap<Integer,Integer> getNewHashMap() {
+    private HashMap<Integer, Integer> getNewHashMap() {
         HashMap<Integer, Integer> values = new HashMap<>();
         values.put(0, 0);
         values.put(1, 0);
@@ -91,15 +70,43 @@ public class RadixSort {
         return values;
     }
 
-    public void preencheHashMap(HashMap<Integer, Integer> values, String[] iArrStr, int actualPosition) {
-        for(String elem : iArrStr) {
+    public void fillHashMap(HashMap<Integer, Integer> values, String[] iArrStr, int actualPosition) {
+        for (String elem : iArrStr) {
             int digit = 0;
-            if(!(elem.length() < actualPosition)) {
-                digit = Integer.parseInt(elem.substring(elem.length()-actualPosition, elem.length()-actualPosition +1));
+            if (!(elem.length() < actualPosition)) {
+                digit = Integer.parseInt(elem.substring(elem.length() - actualPosition, elem.length() - actualPosition + 1));
             }
             int value = values.get(digit);
             values.put(digit, ++value);
         }
     }
 
+    public void sumHashMapWithNextPosition(HashMap<Integer, Integer> values) {
+        for (Map.Entry<Integer, Integer> entry : values.entrySet()) {
+            int key = entry.getKey();
+            if (!(key == 0)) {
+                int value = entry.getValue();
+                int auxKey = entry.getKey() - 1;
+                int auxValue = values.get(auxKey);
+                values.put(key, auxValue + value);
+            }
+        }
+    }
+
+    public String[] createNewPositionArray(HashMap<Integer,Integer> values, String[] iArrStr, int actualPosition) {
+        String[] newArrStr = new String[iArrStr.length];
+         for(int i = iArrStr.length - 1; i > -1; i --) {
+            String elem = iArrStr[i];
+            int digit = 0;
+
+            if(!(elem.length() < actualPosition)) {
+                digit = Integer.parseInt(elem.substring(elem.length()-actualPosition, elem.length()-actualPosition +1));
+            }
+
+            int value = values.get(digit);
+            values.put(digit, --value);
+            newArrStr[value] = iArrStr[i];
+        }
+         return newArrStr;
+    }
 }
