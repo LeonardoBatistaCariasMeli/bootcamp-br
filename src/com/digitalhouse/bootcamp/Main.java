@@ -13,7 +13,9 @@ public class Main {
         // Exercicio 2
         aula3.multipleNumbers();
 
+        System.out.println("\n");
+
         // Exercicio 3
-        System.out.println(Aula3.isPrimo(5));
+        aula3.isPrimo();
     }
 }
