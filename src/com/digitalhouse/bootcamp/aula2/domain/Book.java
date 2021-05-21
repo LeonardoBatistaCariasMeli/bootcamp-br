@@ -10,6 +10,9 @@ public class Book {
     private String autor;
     private String genero;
 
+    public Book() {
+    }
+
     public Book(String titulo, String autor, String genero) {
         this.id = ThreadLocalRandom.current().nextInt(1, 1000000);
         this.titulo = titulo;
