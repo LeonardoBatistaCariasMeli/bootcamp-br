@@ -2,19 +2,61 @@ package com.digitalhouse.bootcamp.aula2.domain;
 
 public class ContaCorrente {
 
+	private int account;
+	private int agency;
+	private String nameOwner;
 	private double balance;
 	
 	public ContaCorrente() {
 		
 	}
 	
-	public ContaCorrente(double balance) {
+	
+	public ContaCorrente(int account, int agency, String nameOwner, double balance) {
+		this.account = account;
+		this.agency = agency;
+		this.nameOwner = nameOwner;
 		this.balance = balance;
 	}
-	
+
+
 	public ContaCorrente(ContaCorrente contaCorrente) {
+		this.account = contaCorrente.getAccount();
+		this.agency = contaCorrente.getAgency();
+		this.nameOwner = contaCorrente.getNameOwner();
 		this.balance = contaCorrente.getBalance();
 	}
+	
+	
+	public int getAccount() {
+		return account;
+	}
+
+
+	public void setAccount(int account) {
+		this.account = account;
+	}
+
+
+	public int getAgency() {
+		return agency;
+	}
+
+
+	public void setAgency(int agency) {
+		this.agency = agency;
+	}
+
+
+	public String getNameOwner() {
+		return nameOwner;
+	}
+
+
+	public void setNameOwner(String nameOwner) {
+		this.nameOwner = nameOwner;
+	}
+
 
 	public double getBalance() {
 		return balance;

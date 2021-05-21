@@ -7,6 +7,7 @@ import com.digitalhouse.bootcamp.aula2.domain.ContaCorrente;
 import com.digitalhouse.bootcamp.aula2.domain.Counter;
 import com.digitalhouse.bootcamp.aula2.domain.Disciplina;
 import com.digitalhouse.bootcamp.aula2.domain.Estudante;
+import com.digitalhouse.bootcamp.aula2.domain.Fracao;
 import com.digitalhouse.bootcamp.aula2.domain.Turma;
 
 public class Aula2 {
@@ -26,6 +27,9 @@ public class Aula2 {
 
 		// Aula 2 - Exxercicio 2.3
 		createBooks();
+
+		// Aula 2 - Exxercicio 2.4
+		fracaoOperators();
 	}
 
 	public static void createTurma() {
@@ -44,7 +48,7 @@ public class Aula2 {
 	}
 
 	private static void runSecondListExercise1() {
-		var contaCorrente1 = new ContaCorrente(1000.00);
+		var contaCorrente1 = new ContaCorrente(1234, 1234567, "Leonardo Batista Carias", 1000.00);
 		contaCorrente1.total();
 		contaCorrente1.deposit(100);
 		contaCorrente1.withDraw(100);
@@ -93,5 +97,17 @@ public class Aula2 {
 		for (var book : books) {
 			System.out.println(book);
 		}
+	}
+
+	public static void fracaoOperators () {
+		Fracao a = new Fracao(3,4);
+		Fracao b = new Fracao(5,6);
+
+		a.multiply(b).print();
+		a.multiply(10).print();
+		a.add(b).print();
+		a.add(8).print();
+		a.divide(b).print();
+		a.divide(8).print();
 	}
 }
