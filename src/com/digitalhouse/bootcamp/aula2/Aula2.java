@@ -2,6 +2,7 @@ package com.digitalhouse.bootcamp.aula2;
 
 import com.digitalhouse.bootcamp.aula2.domain.Disciplina;
 import com.digitalhouse.bootcamp.aula2.domain.Estudante;
+import com.digitalhouse.bootcamp.aula2.domain.Fracao;
 import com.digitalhouse.bootcamp.aula2.domain.Turma;
 
 public class Aula2 {
