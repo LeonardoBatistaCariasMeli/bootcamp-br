@@ -5,7 +5,11 @@ import com.digitalhouse.bootcamp.aula2.domain.Disciplina;
 import com.digitalhouse.bootcamp.aula2.domain.Estudante;
 import com.digitalhouse.bootcamp.aula2.domain.Turma;
 
+import java.util.ArrayList;
+
 public class Aula2 {
+
+    public static final ArrayList<Book> books = new ArrayList<>();
 
     public static void main(String[] args) {
         // Aula 2 - Exercicio 1
@@ -13,9 +17,8 @@ public class Aula2 {
 
         System.out.println();
 
-        // Aual 2 - Exercicio 2.3
-        var book = new Book("Senhor dos Anéis", "J.R.R. Tolkien", "Fantasia");
-        System.out.println(book);
+        // Aula 2 - Exxercicio 2.3
+        createBooks();
     }
 
     public static void createTurma() {
@@ -31,5 +34,22 @@ public class Aula2 {
         turma.addEstudante(estudante2);
 
         turma.printTurma();
+    }
+
+    public static void createBooks() {
+        // Aual 2 - Exercicio 2.3
+        var book1 = new Book("Senhor dos Anéis", "J.R.R. Tolkien", "Fantasia");
+        var book2 = new Book("A Lenda dos Guardiões", "Kathryn Lasky", "Aventura");
+        var book3 = new Book("Percy Jackson e os Olimpianos", "Rick Riordan", "Fantasia e Mitologia");
+
+        book1.emprestimo();
+
+        books.add(book1);
+        books.add(book2);
+        books.add(book3);
+
+        for (var book : books) {
+            System.out.println(book);
+        }
     }
 }
