@@ -9,6 +9,7 @@ public class Book {
     private String titulo;
     private String autor;
     private String genero;
+    private boolean foiEmprestado = false;
 
     public Book() {
     }
@@ -48,12 +49,20 @@ public class Book {
         this.genero = genero;
     }
 
+    public void emprestimo() {
+        this.foiEmprestado = true;
+    }
+
+    public void devolver() {
+        this.foiEmprestado = false;
+    }
+
     @Override
     public String toString() {
-        return "Classe Book\n" +
-                "id=" + id +
+        return "id=" + id +
                 ", titulo='" + titulo + '\'' +
                 ", autor='" + autor + '\'' +
-                ", genero='" + genero + '\'';
+                ", genero='" + genero + '\'' +
+                ", disponível='" + (foiEmprestado ? "não" : "sim") + '\'';
     }
 }
