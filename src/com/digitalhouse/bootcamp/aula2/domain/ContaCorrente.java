@@ -43,6 +43,10 @@ public class ContaCorrente {
 		this.balance -= value;
 		System.out.println("The value R$:" + value + " has been transferred. Total is R$:" + this.balance);
 	}
+	
+	public void total() {
+		System.out.println("The account has the total of R$:" + this.balance);
+	}
 
 	
 }

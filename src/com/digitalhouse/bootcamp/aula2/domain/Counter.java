@@ -2,7 +2,7 @@ package com.digitalhouse.bootcamp.aula2.domain;
 
 public class Counter {
 
-	private Integer value;
+	private Integer value = 0;
 	
 	public Counter() {
 		
@@ -30,6 +30,10 @@ public class Counter {
 	
 	public void decrease() {
 		this.value -= 1;
+	}
+	
+	public void printActualValue() {
+		System.out.println("Actual value: " + this.value);
 	}
 	
 }
