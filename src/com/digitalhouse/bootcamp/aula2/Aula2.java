@@ -44,7 +44,7 @@ public class Aula2 {
 	}
 
 	private static void runSecondListExercise1() {
-		var contaCorrente1 = new ContaCorrente(1000.00);
+		var contaCorrente1 = new ContaCorrente(1234, 1234567, "Leonardo Batista Carias", 1000.00);
 		contaCorrente1.total();
 		contaCorrente1.deposit(100);
 		contaCorrente1.withDraw(100);
