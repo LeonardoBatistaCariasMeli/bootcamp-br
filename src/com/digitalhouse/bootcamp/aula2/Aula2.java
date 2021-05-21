@@ -9,6 +9,9 @@ import com.digitalhouse.bootcamp.aula2.domain.Disciplina;
 import com.digitalhouse.bootcamp.aula2.domain.Estudante;
 import com.digitalhouse.bootcamp.aula2.domain.Fracao;
 import com.digitalhouse.bootcamp.aula2.domain.Turma;
+import com.digitalhouse.bootcamp.aula2.domain.exercise4.Analista;
+import com.digitalhouse.bootcamp.aula2.domain.exercise4.Diretor;
+import com.digitalhouse.bootcamp.aula2.domain.exercise4.Gerente;
 
 public class Aula2 {
 
@@ -109,5 +112,12 @@ public class Aula2 {
 		a.add(8).print();
 		a.divide(b).print();
 		a.divide(8).print();
+	}
+	
+	
+	public static void runSecondListExercise4() {
+		var analista = new Analista("Leonardo Batista Carias", 5000, 40);
+		var gerente = new Gerente("Carolina Fugita", 10000, 36);
+		var diretor = new Diretor("Gustavo Franca", 15000, 0);
 	}
 }
