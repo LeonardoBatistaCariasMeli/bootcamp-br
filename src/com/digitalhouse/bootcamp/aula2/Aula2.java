@@ -11,6 +11,8 @@ public class Aula2 {
         // Aula 2 - Exercicio 1
         createTurma();
 
+        System.out.println();
+
         // Aual 2 - Exercicio 2.3
         var book = new Book("Senhor dos Anéis", "J.R.R. Tolkien", "Fantasia");
         System.out.println(book);
