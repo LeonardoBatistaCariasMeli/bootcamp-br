@@ -1,5 +1,6 @@
 package com.digitalhouse.bootcamp.aula2.domain;
 
+// Aula 2 - Exercicio 1
 public class Estudante {
     private String nome;
     private int idade;

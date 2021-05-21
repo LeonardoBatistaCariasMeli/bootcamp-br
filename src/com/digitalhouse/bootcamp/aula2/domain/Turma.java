@@ -3,6 +3,7 @@ package com.digitalhouse.bootcamp.aula2.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+// Aula 2 - Exercicio 1
 public class Turma {
     private List<Disciplina> disciplinas = new ArrayList<>();
     private List<Estudante> estudantes = new ArrayList<>();
