@@ -110,14 +110,14 @@ public class Aula2 {
 		}
 	}
 
-<<<<<<< HEAD
 	public static void testClassUtils() {
 		System.out.println("......." + Utils.ltrim(" Teste left trim"));
 
 		System.out.println(Utils.rtrim("Teste right trim ") + ".......");
 
 		System.out.println("..." + Utils.trim("TESTE DOS DOIS LADOS") + "...");
-=======
+	}
+
 	public static void fracaoOperators () {
 		Fracao a = new Fracao(3,4);
 		Fracao b = new Fracao(5,6);
@@ -156,6 +156,5 @@ public class Aula2 {
 		diretor.realizePayment();
 		diretor.getBonification();
 		diretor.realizePayment();
->>>>>>> e39ebacb4dc02e5156b1c0e68a00b9f60561a876
 	}
 }
