@@ -10,7 +10,7 @@ public class Tecnico extends Funcionario implements CLT {
 	public void getBonification() {
 		this.salary += this.salary * 0.05;
 	}
-	
+
 	@Override
 	public void realizePayment() {
 		System.out.println("O funcionário " + this.name + ", vai receber R$: " + this.salary);
@@ -19,8 +19,8 @@ public class Tecnico extends Funcionario implements CLT {
 
 	@Override
 	public void printEmployeeData() {
-		System.out.println("Nome: " + this.name + ", R$: " + this.salary + ", Cargo: " + this.occupation + ", Horas trabalhadas: " + workedHour);
-		
+		System.out.println("Nome: " + this.name + ", salário base R$: " + this.salary + ", Cargo: " + this.occupation
+				+ ", Horas trabalhadas: " + workedHour);
 	}
 
 }
