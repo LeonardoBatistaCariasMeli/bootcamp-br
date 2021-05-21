@@ -104,10 +104,10 @@ public class Aula2 {
 		Fracao b = new Fracao(5,6);
 
 		a.multiply(b).print();
-		a.multiply(10).print();
+		a.multiply(10).print(); //com números inteiros
 		a.add(b).print();
-		a.add(8).print();
+		a.add(8).print(); //com números inteiros
 		a.divide(b).print();
-		a.divide(8).print();
+		a.divide(8).print(); //com números inteiros
 	}
 }
