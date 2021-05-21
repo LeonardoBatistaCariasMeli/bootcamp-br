@@ -7,8 +7,13 @@ import com.digitalhouse.bootcamp.aula2.domain.ContaCorrente;
 import com.digitalhouse.bootcamp.aula2.domain.Counter;
 import com.digitalhouse.bootcamp.aula2.domain.Disciplina;
 import com.digitalhouse.bootcamp.aula2.domain.Estudante;
+import com.digitalhouse.bootcamp.aula2.domain.Fracao;
 import com.digitalhouse.bootcamp.aula2.domain.Turma;
 import com.digitalhouse.bootcamp.aula2.exercicio2_6.Utils;
+import com.digitalhouse.bootcamp.aula2.domain.exercise4.Analista;
+import com.digitalhouse.bootcamp.aula2.domain.exercise4.Diretor;
+import com.digitalhouse.bootcamp.aula2.domain.exercise4.Gerente;
+import com.digitalhouse.bootcamp.aula2.domain.exercise4.Tecnico;
 
 public class Aula2 {
 
@@ -28,8 +33,14 @@ public class Aula2 {
 		// Aula 2 - Exxercicio 2.3
 		createBooks();
 
+		// Aula 2 - Exercicio 2.4
+		fracaoOperators();
+
 		// Aula 2 - Exercicio 2.6
 		testClassUtils();
+		
+		// Aula 2 - Exercicio 4.1
+		runSecondListExercise4();
 	}
 
 	public static void createTurma() {
@@ -99,11 +110,52 @@ public class Aula2 {
 		}
 	}
 
+<<<<<<< HEAD
 	public static void testClassUtils() {
 		System.out.println("......." + Utils.ltrim(" Teste left trim"));
 
 		System.out.println(Utils.rtrim("Teste right trim ") + ".......");
 
 		System.out.println("..." + Utils.trim("TESTE DOS DOIS LADOS") + "...");
+=======
+	public static void fracaoOperators () {
+		Fracao a = new Fracao(3,4);
+		Fracao b = new Fracao(5,6);
+
+		a.multiply(b).print();
+		a.multiply(10).print(); //com números inteiros
+		a.add(b).print();
+		a.add(8).print(); //com números inteiros
+		a.divide(b).print();
+		a.divide(8).print(); //com números inteiros
+	}
+	
+	
+	public static void runSecondListExercise4() {
+		var tecnico = new Tecnico("Nycolas", 2500, 40);
+		var analista = new Analista("Leonardo Batista Carias", 5000, 40);
+		var gerente = new Gerente("Carolina Fugita", 10000, 36);
+		var diretor = new Diretor("Gustavo Franca", 15000, 0, 15000000);
+		
+		tecnico.printEmployeeData();
+		tecnico.realizePayment();
+		tecnico.getBonification();
+		tecnico.realizePayment();
+		
+		analista.printEmployeeData();
+		analista.realizePayment();
+		analista.getBonification();
+		analista.realizePayment();
+		
+		gerente.printEmployeeData();
+		gerente.realizePayment();
+		gerente.getBonification();
+		gerente.realizePayment();
+		
+		diretor.printEmployeeData();
+		diretor.realizePayment();
+		diretor.getBonification();
+		diretor.realizePayment();
+>>>>>>> e39ebacb4dc02e5156b1c0e68a00b9f60561a876
 	}
 }

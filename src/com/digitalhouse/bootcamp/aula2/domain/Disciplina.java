@@ -1,6 +1,5 @@
 package com.digitalhouse.bootcamp.aula2.domain;
 
-// Aula 2 - Exercicio 1
 public class Disciplina {
     private String nome;
     private double cargaHoraria;
