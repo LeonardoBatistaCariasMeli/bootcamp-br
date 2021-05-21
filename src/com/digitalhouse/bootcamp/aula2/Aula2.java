@@ -8,6 +8,7 @@ import com.digitalhouse.bootcamp.aula2.domain.Counter;
 import com.digitalhouse.bootcamp.aula2.domain.Disciplina;
 import com.digitalhouse.bootcamp.aula2.domain.Estudante;
 import com.digitalhouse.bootcamp.aula2.domain.Turma;
+import com.digitalhouse.bootcamp.aula2.exercicio2_6.Utils;
 
 public class Aula2 {
 
@@ -26,6 +27,9 @@ public class Aula2 {
 
 		// Aula 2 - Exxercicio 2.3
 		createBooks();
+
+		// Aula 2 - Exercicio 2.6
+		testClassUtils();
 	}
 
 	public static void createTurma() {
@@ -93,5 +97,13 @@ public class Aula2 {
 		for (var book : books) {
 			System.out.println(book);
 		}
+	}
+
+	public static void testClassUtils() {
+		System.out.println("......." + Utils.ltrim(" Teste left trim"));
+
+		System.out.println(Utils.rtrim("Teste right trim ") + ".......");
+
+		System.out.println("..." + Utils.trim("TESTE DOS DOIS LADOS") + "...");
 	}
 }

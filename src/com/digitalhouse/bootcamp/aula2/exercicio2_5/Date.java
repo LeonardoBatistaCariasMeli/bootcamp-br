@@ -1,4 +1,4 @@
-package com.digitalhouse.bootcamp.aula2.exercicio5;
+package com.digitalhouse.bootcamp.aula2.exercicio2_5;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
