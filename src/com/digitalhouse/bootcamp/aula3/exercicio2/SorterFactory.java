@@ -12,8 +12,8 @@ public class SorterFactory {
         var properties = new Properties();
         try {
             properties.load(new FileInputStream(sorterPath));
-            Constructor<?>  constuctor = Class.forName(properties.getProperty("sorter")).getConstructor();
-                var sorter = constuctor.newInstance();
+            Constructor<?>  constructor = Class.forName(properties.getProperty("sorter")).getConstructor();
+                var sorter = constructor.newInstance();
                 if(sorter instanceof Sorter){
                     return (Sorter) sorter;
                 }
