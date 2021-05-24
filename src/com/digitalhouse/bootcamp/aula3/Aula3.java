@@ -1,6 +1,8 @@
 package com.digitalhouse.bootcamp.aula3;
 
 import com.digitalhouse.bootcamp.aula3.domain.Celular;
+import com.digitalhouse.bootcamp.aula3.domain.OrderCelular;
+import com.digitalhouse.bootcamp.aula3.domain.OrderPessoa;
 import com.digitalhouse.bootcamp.aula3.domain.Pessoa;
 import com.digitalhouse.bootcamp.aula3.domain.interfaces.Precedente;
 import com.digitalhouse.bootcamp.aula3.utils.SortUtil;
@@ -16,7 +18,7 @@ public class Aula3 {
 		var pessoa1 = new Pessoa("Leonardo", "12345678900");
 		var pessoa2 = new Pessoa("Onias", "12345678901");
 
-		if (pessoa1.precedeA(pessoa2)) {
+		if (pessoa1.precedeA(pessoa2, null)) {
 			System.out.println("O " + pessoa1.getNome() + " precede o " + pessoa2.getNome());
 		} else {
 			System.out.println("O " + pessoa2.getNome() + " precede o " + pessoa1.getNome());
@@ -29,18 +31,13 @@ public class Aula3 {
 		var pessoa4 = new Pessoa("Carolina", "12345678903");
 		var pessoa5 = new Pessoa("Nycolas", "12345678904");
 
-		Precedente<Pessoa>[] precedentes = new Precedente[5];
-		precedentes[0] = pessoa1;
-		precedentes[1] = pessoa2;
-		precedentes[2] = pessoa3;
-		precedentes[3] = pessoa4;
-		precedentes[4] = pessoa5;
+		Pessoa[] precedentes = {pessoa1, pessoa2, pessoa3, pessoa4, pessoa5};
 
-		var precedentesResultado = (Precedente<Pessoa>[]) SortUtil.sort(precedentes);
+		var precedentesResultado = SortUtil.sort(precedentes, OrderPessoa.nome);
 
-		for (Precedente<Pessoa> precedente : precedentesResultado) {
+		for (var precedente : precedentesResultado) {
 			Pessoa p = (Pessoa) precedente;
-			System.out.println(p.getNome());
+			System.out.println("Nome: " + p.getNome() + ", CPF: " + p.getCpf());
 		}
 		
 		System.out.println();
@@ -52,18 +49,18 @@ public class Aula3 {
 		var celular4 = new Celular("+55 11 94444-5555", "Carolina");
 		var celular5 = new Celular("+55 11 95555-6666", "Nycolas");
 
-		Precedente<Celular>[] celulares = new Celular[5];
+		Celular[] celulares = new Celular[5];
 		celulares[0] = celular1;
 		celulares[1] = celular2;
 		celulares[2] = celular3;
 		celulares[3] = celular4;
 		celulares[4] = celular5;
 		
-		var celularesResultado = (Precedente<Celular>[]) SortUtil.sort(celulares);
+		var celularesResultado = SortUtil.sort(celulares, OrderCelular.number);
 
-		for (Precedente<Celular> celular : celularesResultado) {
+		for (var celular : celularesResultado) {
 			Celular c = (Celular) celular;
-			System.out.println(c.getHolder());
+			System.out.println("Nome: " + c.getHolder() + ", número: " + c.getNumber());
 		}
 
 	}

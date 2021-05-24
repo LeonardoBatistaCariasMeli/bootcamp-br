@@ -2,7 +2,7 @@ package com.digitalhouse.bootcamp.aula3.domain;
 
 import com.digitalhouse.bootcamp.aula3.domain.interfaces.Precedente;
 
-public class Pessoa implements Precedente<Pessoa> {
+public class Pessoa implements Precedente<Pessoa, OrderPessoa> {
 
 	private String nome;
 	private String cpf;
@@ -34,8 +34,22 @@ public class Pessoa implements Precedente<Pessoa> {
 	}
 
 	@Override
-	public boolean precedeA(Pessoa p) {
-		int result = nome.compareToIgnoreCase(p.getNome());
+	public boolean precedeA(Pessoa p, OrderPessoa order) {
+		int result;
+
+		if (order == null) {
+			order = OrderPessoa.nome;
+		}
+
+		switch (order) {
+			case cpf:
+				result = cpf.compareToIgnoreCase(p.getCpf());
+				break;
+
+			case nome:
+			default:
+				result = nome.compareToIgnoreCase(p.getNome());
+		}
 
 		return result < 0; 
 	}

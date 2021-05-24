@@ -2,7 +2,7 @@ package com.digitalhouse.bootcamp.aula3.domain;
 
 import com.digitalhouse.bootcamp.aula3.domain.interfaces.Precedente;
 
-public class Celular implements Precedente<Celular>{
+public class Celular implements Precedente<Celular, OrderCelular>{
 
 	private String number;
 	private String holder;
@@ -17,8 +17,18 @@ public class Celular implements Precedente<Celular>{
 	}
 	
 	@Override
-	public boolean precedeA(Celular p) {
-		int result = this.holder.compareToIgnoreCase(p.getHolder());
+	public boolean precedeA(Celular p, OrderCelular order) {
+		int result;
+		switch (order) {
+			case number:
+				result = this.number.compareToIgnoreCase(p.getNumber());
+				break;
+
+			case holder:
+			default:
+				result = this.holder.compareToIgnoreCase(p.getHolder());
+				break;
+		}
 
 		return result < 0; 
 	}
