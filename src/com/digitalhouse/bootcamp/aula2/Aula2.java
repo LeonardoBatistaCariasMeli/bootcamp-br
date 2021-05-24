@@ -9,6 +9,7 @@ import com.digitalhouse.bootcamp.aula2.domain.Disciplina;
 import com.digitalhouse.bootcamp.aula2.domain.Estudante;
 import com.digitalhouse.bootcamp.aula2.domain.Fracao;
 import com.digitalhouse.bootcamp.aula2.domain.Turma;
+import com.digitalhouse.bootcamp.aula2.exercicio2_6.Utils;
 import com.digitalhouse.bootcamp.aula2.domain.exercise4.Analista;
 import com.digitalhouse.bootcamp.aula2.domain.exercise4.Diretor;
 import com.digitalhouse.bootcamp.aula2.domain.exercise4.Gerente;
@@ -32,8 +33,11 @@ public class Aula2 {
 		// Aula 2 - Exxercicio 2.3
 		createBooks();
 
-		// Aula 2 - Exxercicio 2.4
+		// Aula 2 - Exercicio 2.4
 		fracaoOperators();
+
+		// Aula 2 - Exercicio 2.6
+		testClassUtils();
 		
 		// Aula 2 - Exercicio 4.1
 		runSecondListExercise4();
@@ -104,6 +108,14 @@ public class Aula2 {
 		for (var book : books) {
 			System.out.println(book);
 		}
+	}
+
+	public static void testClassUtils() {
+		System.out.println("......." + Utils.ltrim(" Teste left trim"));
+
+		System.out.println(Utils.rtrim("Teste right trim ") + ".......");
+
+		System.out.println("..." + Utils.trim("TESTE DOS DOIS LADOS") + "...");
 	}
 
 	public static void fracaoOperators () {
