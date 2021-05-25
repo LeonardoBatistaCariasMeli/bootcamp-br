@@ -17,7 +17,7 @@ public class GuardaRoupa {
     }
 
     public Integer guardarVestuarios(List<Vestuario> roupas) {
-        Integer idMax = this.armazenamento.size();
+        var idMax = this.pegarMaxId();
 
         this.armazenamento.put(++idMax, roupas);
 
@@ -37,5 +37,17 @@ public class GuardaRoupa {
         this.armazenamento.remove(id);
 
         return roupas;
+    }
+
+    private Integer pegarMaxId() {
+        int idMax = 0;
+
+        for(Integer key : this.armazenamento.keySet()) {
+            if (idMax < key) {
+                idMax = key;
+            }
+        }
+
+        return idMax;
     }
 }

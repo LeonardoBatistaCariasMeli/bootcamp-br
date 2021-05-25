@@ -28,7 +28,12 @@ public class Main {
 
         guardaRoupa.mostrarVestuarios();
 
-        guardaRoupa.devolverVestuarios(3);
+        guardaRoupa.devolverVestuarios(2);
+
+        guardaRoupa.mostrarVestuarios();
+
+        List<Vestuario> usuario4 = Arrays.asList(vestuario7, vestuario8, vestuario9);
+        guardaRoupa.guardarVestuarios(usuario4);
 
         guardaRoupa.mostrarVestuarios();
     }
