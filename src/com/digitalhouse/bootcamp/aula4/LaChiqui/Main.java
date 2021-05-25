@@ -4,6 +4,7 @@ import com.digitalhouse.bootcamp.aula4.LaChiqui.domains.Firework;
 import com.digitalhouse.bootcamp.aula4.LaChiqui.domains.Guest;
 import com.digitalhouse.bootcamp.aula4.LaChiqui.enums.GuestType;
 import com.digitalhouse.bootcamp.aula4.LaChiqui.factories.FireworkFactory;
+import com.digitalhouse.bootcamp.aula4.LaChiqui.interfaces.IFireworkFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +22,7 @@ public class Main {
 
         List<Guest> guests = Arrays.asList(guest1, guest2, guest3, guest4);
 
-        FireworkFactory factory = new FireworkFactory();
+        IFireworkFactory factory = new FireworkFactory();
         factory.addPackage(new Firework(new UUID(0, 10), "Kabum"));
         factory.addPackage(new Firework(new UUID(0, 10), "Pow"));
 
