@@ -33,7 +33,7 @@ public class Race {
     public void removeVehicleByPlate (String plate) {
         var vehicle = this.vehiclesList.stream().filter(v -> v.getPlate().equals(plate)).findFirst();
         if(vehicle.isPresent()){
-            this.vehiclesList.remove(vehicle);
+            this.vehiclesList.remove(vehicle.get());
         }
         else{
             System.out.println("This plate doesn't exist.");
@@ -50,7 +50,6 @@ public class Race {
                 winner = v;
             }
         }
-
         return winner;
     }
 
@@ -60,7 +59,7 @@ public class Race {
         if(winner == null) {
             return;
         }
-        System.out.println("Winner :" + winner.getPlate());
+        System.out.println("Winner: " + winner.getPlate());
     }
 
     public double getRaceTime () {

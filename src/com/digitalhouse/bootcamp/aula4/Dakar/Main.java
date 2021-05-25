@@ -17,9 +17,10 @@ public class Main {
 
         Safety<Car> safetyCar = new Safety<Car>();
         safetyCar.help(car2);
+        race.removeVehicleByPlate("MFS2387");
 
         race.printWinner();
         DecimalFormat df = new DecimalFormat("####0.00");
-        System.out.println("Value: " + (df.format(race.getRaceTime()/60)) + " minutes");
+        System.out.println("Time of the race: " + (df.format(race.getRaceTime()/60)) + " minutes");
     }
 }
