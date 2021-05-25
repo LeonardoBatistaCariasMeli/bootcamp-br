@@ -1,8 +1,9 @@
 package com.digitalhouse.bootcamp.aula4.LaChiqui.domains;
 
 import com.digitalhouse.bootcamp.aula4.LaChiqui.enums.GuestType;
+import com.digitalhouse.bootcamp.aula4.LaChiqui.interfaces.IGuest;
 
-public class Guest {
+public class Guest implements IGuest {
 
     private GuestType type;
 
@@ -29,9 +30,8 @@ public class Guest {
         this.name = name;
     }
 
+    @Override
     public void eatCake() {
-        if (this.type == GuestType.MELI) {
-            System.out.println("Viva la Chiqui !!");
-        }
+        System.out.println("Nome: " + this.name);
     }
 }
